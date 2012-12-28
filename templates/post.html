@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>
+		{{ page.title }}
+	</h1>
+	<h2 class="subtitle center">
+		{{ page.topic }}
+	</h2>
+	<p class="intro">
+		{{ page.intro }}
+	</p>
+
+	{{ page|safe }}
+
+	<span class="detail">
+		This post was published on {{ page.date }}
+	</span>
+	<div class="comments">
+	</div>
+	<div class="bio row">
+		<div class="me span2"></div>
+		<div class="span6">
+			<h2> Cameron Maske </h2>
+			<p>
+				Short bio that describes me in one sentance. Short and snappy, not to mention, to the point.
+			</p>
+			<span class="note">
+				Contact me on <a href="#">Twitter</a> or drop me an <a href="#">email</a>
+			</span>
+		</div>
+	</div>
+{% endblock %}
+

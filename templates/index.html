@@ -1,4 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-Welcome to Cactus!
-{% endblock %}
+    {% for page in pages %}
+        <h2>
+            <a href="{{ url_for("page", path=page.path) }}">
+            	{{ page.title }}
+            </a>
+        </h2>
+        <h3> 25th of Decemeber </h3>
+        <p>
+        	{{ page.intro }}
+        </p>
+    {% else %}
+        <p> Nothing published just yet... </p>
+    {% endfor %}
+{% endblock content %}
