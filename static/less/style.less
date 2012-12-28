@@ -1,0 +1,43 @@
+@import "bootstrap/bootstrap.less";
+@import "typography.less";
+
+
+//Bio. Short introduction to myself, above blog posts.
+@bio-picture-size: 100px;
+
+.bio {
+	.me {
+		background: url('/static/img/cameron.png');
+		width: @bio-picture-size;
+		height: @bio-picture-size;
+		background-size: cover;
+		margin-top: 30px;
+		&.left {
+			background-position:0 -200px;
+		}
+		&.down-left {
+			background-position:0 -400px;
+		}
+		&.down {
+			background-position:0 -600px;
+		}
+		&.down-right {
+			background-position:0 -800px;
+		}
+		&.right {
+			background-position:0 -1000px;
+		}
+		&.up-right {
+			background-position:0 -1200px;
+		}
+		&.up {
+			background-position:0 -1400px;
+		}
+		&.up-left {
+			background-position:0 -1600px;
+		}
+		&:hover{
+			background-position:0 0;
+		}
+	}
+}

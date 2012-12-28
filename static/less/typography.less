@@ -1,0 +1,95 @@
+@sans-serif-font-family: "futura-pt", sans-serif;
+@serif-font-family: "ff-tisa-web-pro", serif;
+
+body {
+    //font: font-style , font-variant , font-weight , font-size , line-height and font-family
+    font: normal normal 400 16px/25px @serif-font-family;
+    background-color: #FFFFFF;
+    // font-family: @serif-font-family
+    // font-style: normal;
+    // font-weight: 400;
+    // font-size: 16px;
+    // line-height: 25px;
+}
+
+.center {
+    text-align: center;
+}
+
+blockquote {
+    margin: 25px 0;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    text-indent: 16px;
+}
+
+h1 {
+    font: normal normal 700 63px/74px @sans-serif-font-family;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+h2 {
+    margin-top: 50px 0 25px 0;
+    font-size: 30px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+p {
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+//Small thin font at the bottom of posts.
+.detail {
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #666464;
+    font-weight: 300;
+    font-family: @sans-serif-font-family;
+}
+
+p.intro {
+    text-indent: 0px;
+    margin-bottom: 25px;
+    line-height: 42px;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    font-family: @serif-font-family;
+    text-align: justify;
+}
+
+//Under the main h1 title of a blog post.
+.subtitle {
+    font: normal normal 700 24px/25px @sans-serif-font-family;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.summary {
+    //Article name
+    h2 {
+        font: normal normal 900 27px/25px @sans-serif-font-family;
+        margin-top: 25px;
+    }
+    //Date under the title. <span>
+    .date {
+        font-weight: 700;
+        font-family: @sans-serif-font-family;
+        margin-bottom: 25px;
+
+        line-height: 25px;
+    }
+    //Short summary of the post.
+    p.short {
+        margin-bottom: 50px;
+    }
+}
