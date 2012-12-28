@@ -24,7 +24,7 @@ def index():
 #Individual blog articles. e.g. cameronmaske.com/what-is-wrong-with-the-world
 @app.route('/<path:path>/')
 def page(path):
-    page = pages.get_or_404(path).html
+    page = pages.get_or_404(path)
     return render_template('post.html', page=page)
 
 if __name__ == '__main__':
