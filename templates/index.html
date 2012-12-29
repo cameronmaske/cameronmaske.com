@@ -1,16 +1,50 @@
 {% extends "base.html" %}
+
+{% block navbar %}
+<div class="top-bar"></div>
+{% endblock %}
+
 {% block content %}
+    <div class="bio row">
+        <div class="span8">
+            <div class="me"></div>
+        </div>
+    </div>
     {% for page in pages %}
-        <h2>
-            <a href="{{ url_for("page", path=page.path) }}">
-            	{{ page.title }}
-            </a>
-        </h2>
-        <h3> 25th of Decemeber </h3>
-        <p>
+    <div class="summary">
+        <div class="subtitle center">
+            <h2>
+                <a href="{{ url_for("page", path=page.path) }}">
+                    {{ page.title }}
+                </a>
+            </h2>
+        </div>
+        <h3 class="date center">
+            <span class="serif">{{ page.date }} </span>
+            ·
+            {{page.topic}}
+        </h3>
+        <p class="short">
         	{{ page.intro }}
         </p>
+    </div>
     {% else %}
         <p> Nothing published just yet... </p>
     {% endfor %}
+    <!--
+    <div class="bio row">
+        <div class="span8">
+            <div class="me"></div>
+        </div>
+        <div class="span8">
+            <h2> Cameron Maske </h2>
+            <p>
+                Short bio that describes me in one sentance. Short and snappy, not to mention, to the point.
+            </p>
+            <span class="note">
+                Contact me on <a href="#">Twitter</a> or drop me an <a href="#">email</a>
+            </span>
+        </div>
+    </div>
+    -->
 {% endblock content %}

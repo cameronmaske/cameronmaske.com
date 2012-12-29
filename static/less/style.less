@@ -1,9 +1,15 @@
 @import "bootstrap/bootstrap.less";
+@import "override.less";
 @import "typography.less";
-
+@import "tricks.less";
 
 //Bio. Short introduction to myself, above blog posts.
 @bio-picture-size: 100px;
+
+.top-bar {
+	background: orange;
+	height: 12px;
+}
 
 .bio {
 	.me {
@@ -11,7 +17,7 @@
 		width: @bio-picture-size;
 		height: @bio-picture-size;
 		background-size: cover;
-		margin-top: 30px;
+		margin: 30px auto 0;
 		&.left {
 			background-position:0 -200px;
 		}

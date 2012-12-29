@@ -11,19 +11,28 @@
 	<script type="text/javascript" src="//use.typekit.net/yge1qyw.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	{% block header %}
-	<title>Welcome</title>
-	{% endblock %}
+	<title> {% block title %}Entrepreneur in development{% endblock %} - Cameron Maske</title>
 
 </head>
 <body>
+	{% block navbar %}
+	<div class="navbar">
+  		<div class="navbar-inner">
+    		<a class="brand" href="/">
+    			<i class="icon-home"></i>
+    			Home
+    		</a>
+  		</div>
+	</div>
+	{% endblock %}
+
 	<div class="container">
 		<div class="row">
 			<div class="span8 offset2">
 				{% block content %}{% endblock %}
 			</div>
 		</div>
-	</div>
+	</div
 
 	{% block scripts %}
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
