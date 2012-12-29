@@ -1,0 +1,101 @@
+//Various bootstrap overrides. Hopfully will mean upgrading different version of bootstrap will be easy!
+@import "tricks.less";
+@import "variables.less";
+
+.navbar-inner {
+	background: @navbar-color;
+	border: none;
+	.border-radius(0px);
+	.box-shadow(none);
+	background-image: none;
+}
+
+
+.navbar {
+	z-index: 1000;
+	font-family: @sans-serif-font-family;
+	.brand {
+		margin: 0;
+		color: white;
+		text-shadow: none;
+		font-weight: 400;
+		letter-spacing: 2px;
+		font-size: 24px;
+	}
+
+	.nav {
+		.active {
+			> a {
+				background: @navbar-color;
+				color: white;
+			}
+			> a:hover {
+				background: darken(@navbar-color, 10%);
+				color: white;
+			}
+		}
+		> li {
+			margin: 12px 6px;
+			a {
+				.border-radius(5px);
+				color: white;
+				text-shadow:none;
+				.transition (all 0.25s ease-in);
+				font-weight: 400;
+				letter-spacing: 1px;
+				font-size: 24px;
+			}
+			a:hover {
+				color: white;
+				background: @navbar-color;
+				.box-shadow(inset 0 3px 8px rgba(0, 0, 0, 0.125));
+			}
+		}
+	}
+	.divider-vertical {
+		border-left: 1px solid rgba(60, 51, 52, 0.25);
+		border-right: 1px solid rgba(60, 51, 52, 0.08);
+	}
+}
+
+.navbar-search {
+	margin-top: 16px;
+	.search-query {
+		line-height: 24px;
+	}
+}
+
+//navs.less
+.nav-list {
+	padding: 0;
+	.active {
+		> a {
+			background: @light;
+			color: @dark;
+			&:hover {
+				background: @navbar-color;
+				.box-shadow(inset 0 3px 8px rgba(0, 0, 0, 0.125));
+				text-shadow: 0 0 2px black;
+			}
+		}
+
+	}
+	> li {
+		padding: 0 15px;
+		line-height: 24*1.5px;
+		//border-top: 1px solid lighten(@dark, 10%);
+		> a {
+			.transition (all 0.15s ease-out);
+			color: white;
+			text-shadow: none;
+			&:hover {
+				background: @navbar-color;
+				.box-shadow(inset 0 3px 8px rgba(0, 0, 0, 0.125));
+				text-shadow: 0 0 2px black;
+			}
+		}
+		&:last-child {
+			//border-bottom: 1px solid lighten(@dark, 10%);
+			}
+		}
+}
