@@ -10,22 +10,24 @@
             <div class="me"></div>
         </div>
     </div>
-    {% for page in pages %}
+    {% for article in articles %}
     <div class="summary">
         <div class="subtitle center">
             <h2>
-                <a href="{{ url_for("page", path=page.path) }}">
-                    {{ page.title }}
+                <a href="{{ url_for("page", path=article.path) }}">
+                    {{ article.title }}
                 </a>
             </h2>
         </div>
         <h3 class="date center">
-            <span class="serif">{{ page.date }} </span>
+            <span class="serif">
+                {{article.published.strftime('%d %B %Y') }}
+            </span>
             ·
-            {{page.topic}}
+            {{article.topic}}
         </h3>
         <p class="short">
-        	{{ page.intro }}
+        	{{ article.intro }}
         </p>
     </div>
     {% else %}

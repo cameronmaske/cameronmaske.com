@@ -1,5 +1,5 @@
 title: Hello World
-date: June 6th 2012
+published: 2012-06-17
 topic: PROGRAMMING
 intro: A snappy introduction that sets out the main argument for the piece. I'll cover the main ideas right here and hint at my conclusion without giving the game away completely.
 

@@ -1,5 +1,5 @@
 title: Venenatis Fringilla Egestas Tellus
-date: July 17th 2012
+published: 2012-07-17
 topic: LIFE
 intro: Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
 

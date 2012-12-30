@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 
 {% block title %}
-	{{ page.title }}
+	{{ article.title }}
 {% endblock %}
 
 {% block content %}
 	<h1>
-		{{ page.title }}
+		{{ article.title }}
 	</h1>
     <div class="subtitle center uppercase">
         <h2>
-                {{ page.topic }}
+                {{ article.topic }}
         </h2>
     </div>
 	<p class="intro">
-		{{ page.intro }}
+		{{ article.intro }}
 	</p>
 
-	{{ page|safe }}
+	{{ article|safe }}
 
 	<p class="center">
 		<span class="detail">
-			This post was published on {{ page.date }}
+			This post was published on {{article.published.strftime('%d %B %Y') }}
 		</span>
 	</p>
 	<div class="comments">

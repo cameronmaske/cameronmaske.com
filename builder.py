@@ -18,14 +18,17 @@ freezer = Freezer(app)
 #The homepage: e.g. cameronmaske.com/
 @app.route('/')
 def index():
-    return render_template('index.html', pages=pages)
+    articles = (p for p in pages if 'published' in p.meta)
+    # Show the 10 most recent articles, most recent first.
+    articles = sorted(articles, reverse=True, key=lambda p: p.meta['published'])
+    return render_template('index.html', articles=articles)
 
 
 #Individual blog articles. e.g. cameronmaske.com/what-is-wrong-with-the-world
 @app.route('/<path:path>/')
 def page(path):
-    page = pages.get_or_404(path)
-    return render_template('post.html', page=page)
+    article = pages.get_or_404(path)
+    return render_template('post.html', article=article)
 
 if __name__ == '__main__':
     # $ python builder.py build : generates the static site.
