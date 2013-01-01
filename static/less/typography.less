@@ -16,7 +16,7 @@ a {
     .transition (all 0.25s ease-in);
 
     &:hover {
-        color: lighten(@orange, 15%);
+        color: lighten(@orange, 20%);
         text-decoration: none;
     }
 }
@@ -112,7 +112,7 @@ hr {
 
     //Article name
     h2 {
-        .font-size(30);
+        .font-size(34);
         //margin-top: 30px;
     }
     //Date under the title. <span>
@@ -126,5 +126,19 @@ hr {
     //Short summary of the post.
     p.short {
         //margin-bottom: 50px;
+    }
+}
+
+
+//Responsive text.
+@media (min-width: 768px) and (max-width: 979px) {
+    body {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
     }
 }

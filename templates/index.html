@@ -7,7 +7,7 @@
 {% block content %}
     <div class="bio row">
         <div class="span8">
-            <div class="me"></div>
+            <div class="me" id="me"></div>
         </div>
     </div>
     {% for article in articles %}
@@ -27,26 +27,15 @@
             {{article.topic}}
         </h3>
         <p class="short">
-        	{{ article.intro }}
+            {{ article.intro }}
         </p>
     </div>
     {% else %}
         <p> Nothing published just yet... </p>
     {% endfor %}
-    <!--
-    <div class="bio row">
-        <div class="span8">
-            <div class="me"></div>
-        </div>
-        <div class="span8">
-            <h2> Cameron Maske </h2>
-            <p>
-                Short bio that describes me in one sentance. Short and snappy, not to mention, to the point.
-            </p>
-            <span class="note">
-                Contact me on <a href="#">Twitter</a> or drop me an <a href="#">email</a>
-            </span>
-        </div>
-    </div>
-    -->
 {% endblock content %}
+
+{% block scripts %}
+<!-- Cheeky little script to follow people around! -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/follow.js') }}"></script>
+{% endblock %}

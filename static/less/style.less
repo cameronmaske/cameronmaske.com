@@ -12,38 +12,61 @@
 }
 
 .bio {
-	.me {
+	&.outlined {
+			border-top: @default-border;
+			border-bottom: @default-border;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			padding-bottom: 15px;
+	}
+	#me {
 		background: url('/static/img/cameron.png');
 		width: @bio-picture-size;
 		height: @bio-picture-size;
 		background-size: cover;
 		margin: 30px auto 0;
 		&.left {
-			background-position:0 -200px;
+			background-position:0 -1 * @bio-picture-size;
 		}
 		&.down-left {
-			background-position:0 -400px;
+			background-position:0 -2 * @bio-picture-size;
 		}
 		&.down {
-			background-position:0 -600px;
+			background-position:0 -3 * @bio-picture-size;
 		}
 		&.down-right {
-			background-position:0 -800px;
+			background-position:0 -4 * @bio-picture-size;
 		}
 		&.right {
-			background-position:0 -1000px;
+			background-position:0 -5 * @bio-picture-size;
 		}
 		&.up-right {
-			background-position:0 -1200px;
+			background-position:0 -6 * @bio-picture-size;
 		}
 		&.up {
-			background-position:0 -1400px;
+			background-position:0 -7 * @bio-picture-size;
 		}
 		&.up-left {
-			background-position:0 -1600px;
+			background-position:0 -8 * @bio-picture-size;
 		}
 		&:hover{
 			background-position:0 0;
 		}
+	}
+
+	.by {
+		.serif();
+		font-weight: 200;
+		color: #DBDBDB;
+		font-style: italic;
+	}
+
+	h2 {
+		margin-bottom: 15px;
+		.sans-serif();
+	}
+
+	p {
+		margin-top: 0;
 	}
 }
