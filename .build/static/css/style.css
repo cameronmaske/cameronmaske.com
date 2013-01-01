@@ -5398,7 +5398,7 @@ a {
   transition: all 0.25s ease-in;
 }
 a:hover {
-  color: #fbb046;
+  color: #fcba5f;
   text-decoration: none;
 }
 body {
@@ -5473,13 +5473,23 @@ hr {
   padding: 30px 0;
 }
 .summary h2 {
-  font-size: 166.66666666666669%;
+  font-size: 188.88888888888889%;
 }
 .summary .date {
   font-weight: 700;
   font-family: "futura-pt", sans-serif;
   margin-bottom: 25px;
   line-height: 25px;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  body {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
 }
 .center {
   text-align: center;
@@ -5491,37 +5501,57 @@ hr {
   background: orange;
   height: 12px;
 }
-.bio .me {
+.bio.outlined {
+  border-top: 2px solid #dbdbdb;
+  border-bottom: 2px solid #dbdbdb;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+.bio #me {
   background: url('/static/img/cameron.png');
   width: 100px;
   height: 100px;
   background-size: cover;
   margin: 30px auto 0;
 }
-.bio .me.left {
+.bio #me.left {
+  background-position: 0 -100px;
+}
+.bio #me.down-left {
   background-position: 0 -200px;
 }
-.bio .me.down-left {
+.bio #me.down {
+  background-position: 0 -300px;
+}
+.bio #me.down-right {
   background-position: 0 -400px;
 }
-.bio .me.down {
+.bio #me.right {
+  background-position: 0 -500px;
+}
+.bio #me.up-right {
   background-position: 0 -600px;
 }
-.bio .me.down-right {
+.bio #me.up {
+  background-position: 0 -700px;
+}
+.bio #me.up-left {
   background-position: 0 -800px;
 }
-.bio .me.right {
-  background-position: 0 -1000px;
-}
-.bio .me.up-right {
-  background-position: 0 -1200px;
-}
-.bio .me.up {
-  background-position: 0 -1400px;
-}
-.bio .me.up-left {
-  background-position: 0 -1600px;
-}
-.bio .me:hover {
+.bio #me:hover {
   background-position: 0 0;
+}
+.bio .by {
+  font-family: "ff-tisa-web-pro", serif;
+  font-weight: 200;
+  color: #DBDBDB;
+  font-style: italic;
+}
+.bio h2 {
+  margin-bottom: 15px;
+  font-family: "futura-pt", sans-serif;
+}
+.bio p {
+  margin-top: 0;
 }

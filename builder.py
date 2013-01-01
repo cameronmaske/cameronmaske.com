@@ -40,6 +40,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
         freezer.freeze()
         shutil.rmtree('.build/static/less')  # Remove less files.
+        shutil.rmtree('.build/static/coffee')  # Remove coffee files.
     # $ python builder.py deploy : pushes the site to S3
     elif len(sys.argv) > 1 and sys.argv[1] == 'deploy':
         print('Starting to deploy...\n')

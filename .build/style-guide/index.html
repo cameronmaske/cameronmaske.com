@@ -9,11 +9,16 @@
 	<link rel="shortcut icon" href="/static/img/favicon.ico">
 	<link rel="stylesheet" href="/static/css/style.css">
 	<script type="text/javascript" src="//use.typekit.net/yge1qyw.js"></script>
+
+	<!-- Typekit -->
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<title> 
-	Style Guide
- - Cameron Maske</title>
+	<title>
+		
+    Style Guide
+
+		- Cameron Maske
+	</title>
 
 </head>
 <body>
@@ -32,19 +37,22 @@
 		<div class="row">
 			<div class="span8 offset2">
 				
-	<h1>
-		Style Guide
-	</h1>
+    <h1>
+        Style Guide
+    </h1>
     <div class="subtitle center uppercase">
         <h2>
-                DESIGN
+            <span class="serif">
+                11 November 2012
+            </span>
+            ·DESIGN
         </h2>
     </div>
-	<p class="intro">
-		Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
-	</p>
+    <p class="intro">
+        Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
+    </p>
 
-	<p>This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one line (or many) and can drone on for hours. Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>.</p>
+    <p>This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one line (or many) and can drone on for hours. Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>.</p>
 <ul>
 <li>Multiple definitions and terms are possible</li>
 <li>Definitions can include multiple paragraphs too</li>
@@ -64,20 +72,64 @@ which(is_easy) to_remember();
 </blockquote>
 <p>Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. Note that underscores in words are ignored in Markdown Extra.</p>
 
-	<p class="center">
-		<span class="detail">
-			This post was published on 11 November 2012
-		</span>
-	</p>
-	<div class="comments">
-	</div>
+
+    <div class="bio outlined row">
+        <div class="span2">
+            <div id="me"></div>
+        </div>
+        <div class="span6">
+            <h2>
+                <span class="by">by</span>
+                Cameron Maske
+            </h2>
+            <p>
+                Software engineer with a love for web design and typography.  Want to get in touch?
+                <span class="note">
+                    Feel free to drop me an <a href="#" mailto="c@meronmaske.com"> email</a> or over <a href="www.twitter.com/cameronmaske/">
+                </span>
+            </p>
+
+        </div>
+    </div>
+    <div class="comments" id="disqus_thread">
+    </div>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by
+        <span class="logo-disqus">Disqus</span>
+    </a>
 
 			</div>
 		</div>
-	</div
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	
+    <!-- Cheeky little script to follow people around! -->
+    <script type="text/javascript" src="/static/js/follow.js"></script>
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'cameronmaske';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-25258948-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </body>
 </html>
