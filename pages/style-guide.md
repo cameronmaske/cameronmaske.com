@@ -1,5 +1,5 @@
 title: Style Guide
-published: 2012-11-11
+date: 2012-06-17
 topic: DESIGN
 intro: Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.
 
