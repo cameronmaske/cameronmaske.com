@@ -27,12 +27,11 @@ freezer = Freezer(app)
 def index():
     # If in debug, show all articles.
     if DEBUG:
-        articles = (p for p in pages if 'date' in p.meta)
+        articles = (p for p in pages)
     # Else, display only published ones.
     else:
-        articles = (p for p in pages if 'published' and 'date' in p.meta)
+        articles = (p for p in pages if 'published' in p.meta)
     # Show the 10 most recent articles, most recent first.
-    print articles
     articles = sorted(articles, reverse=True, key=lambda p: p.meta['date'])
     return render_template('index.html', articles=articles)
 

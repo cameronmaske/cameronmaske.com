@@ -12,20 +12,24 @@
     </div>
     {% for article in articles %}
     <div class="summary">
-        <div class="subtitle center">
-            <h2>
-                <a href="{{ url_for("page", path=article.path) }}">
-                    {{ article.title }}
-                </a>
-            </h2>
+
+        <h1 class="center title">
+            <a href="{{ url_for("page", path=article.path) }}">
+                {{ article.title|safe }}
+            </a>
+        </h1>
+
+        <div class="subtitle">
+            <h3 class="date center">
+                <span class="serif">
+                    {{ article.date.strftime('%d %B %Y') }}
+                </span>
+                ·
+                <span class="sans-serif">
+                    {{ article.topic }}
+                </span>
+            </h3>
         </div>
-        <h3 class="date center">
-            <span class="serif">
-                {{article.date.strftime('%d %B %Y') }}
-            </span>
-            ·
-            {{article.topic}}
-        </h3>
         <p class="short">
             {{ article.intro }}
         </p>

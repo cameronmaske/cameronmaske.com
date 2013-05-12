@@ -6,7 +6,7 @@ intro: In this blog entry, I'm gonna run over some useful bookmarklets that have
 
 Now, you might be wondering, what on earth is a bookmarklet? A [bookmarklet][1] is a browser addon stored in a bookmark. When clicked, they use javascript to add in functionality to browser. If that's still not clear, just watch one of the videos below, what they do should become more apparent! Now, without further ado, 3 that have helped me with web design!
 
-[live.js][2]
+#[live.js][2]
 
 First on the list is **live.js**. This bookmarklet will monitor the current page's CSS and Javascript, looking for any changes. If any changes are applied to the CSS, they are dynamically applied to the HTML. If any changes are made to the Javascript, the page will reload.
 
