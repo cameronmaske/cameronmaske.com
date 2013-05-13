@@ -50,6 +50,10 @@
     </a>
 {% endblock %}
 {% block scripts %}
+    {% for script_url in article.scripts %}
+        <script type="text/javascript" src="{{ script_url }}"></script>
+    {% endfor %}
+
     <!-- Cheeky little script to follow people around! -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/follow.js') }}"></script>
     <!-- Disqus -->

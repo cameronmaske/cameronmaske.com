@@ -5500,6 +5500,20 @@ hr {
 .uppercase {
   text-transform: uppercase;
 }
+.fit-vid {
+  display: block;
+}
+.fit-vid iframe {
+  margin: 0 auto;
+  display: block;
+}
+.fit-img {
+  display: block;
+}
+.fit-img img {
+  margin: 0 auto;
+  display: block;
+}
 .top-bar {
   background: orange;
   height: 12px;

@@ -5,9 +5,10 @@ import sys
 import shutil
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, make_response
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from werkzeug.contrib.atom import AtomFeed
 
 from deploy import Site
 
@@ -41,6 +42,33 @@ def index():
 def page(path):
     article = pages.get_or_404(path)
     return render_template('post.html', article=article)
+
+
+# Sitemap XML. Seo goodness!
+@app.route('/sitemap.xml')
+def sitemap():
+    articles = (p for p in pages if 'published' in p.meta)
+    response = make_response(render_template('sitemap.xml', articles=articles))
+    response.headers['Content-Type'] = 'application/xml'
+    return response
+
+
+@app.route('/feed.atom')
+def recent_feed():
+    feed = AtomFeed('Recent Articles',
+                    feed_url=request.url, url=request.url_root)
+
+    articles = (p for p in pages if 'published' in p.meta)
+
+    for article in articles:
+        print article['published']
+        feed.add(article['title'], unicode(article.html),
+                 content_type='html',
+                 url=article.path,
+                 author='Cameron Maske',
+                 published=article['date'],
+                 updated=article['date'])
+    return feed.get_response()
 
 if __name__ == '__main__':
     # $ python builder.py build : generates the static site.
