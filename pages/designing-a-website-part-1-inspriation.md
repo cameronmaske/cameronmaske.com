@@ -72,16 +72,16 @@ Snippet #3 - [dribbble.com](http://dribbble.com)
     <img src="http://dribbble.s3.amazonaws.com/users/5577/screenshots/630596/crm_project_small.png"/>
 </div>](http://dribbble.com/shots/630596-CRM-Project-Page)
 
-Dribbble (a network of very talented graphic designers and digital artists from all around the world) is a great bucket of inspiration. After exhausting my ‘scrapbook’ folder, this was my next destination. I really liked the layout of this particular sidebar by Jason Mayo [http://dribbble.com/madebymayo]. The contrast from sidebar to main page is distinct and communicates a clear separation of functionality to user. The active ‘tab’ in the sidebar clearly links to the main page by sharing the same colour. It’s intention is so obvious and intuitive.
+Dribbble (a network of very talented graphic designers and digital artists from all around the world) is a great bucket of inspiration. After exhausting my ‘scrapbook’ folder, this was my next destination. I really liked the layout of this particular sidebar by [Jason Mayo](http://dribbble.com/madebymayo). The contrast from sidebar to main page is distinct and communicates a clear separation of functionality to user. The active ‘tab’ in the sidebar clearly links to the main page by sharing the same colour. It’s intention is so obvious and intuitive.
 
 With a few ideas in the pipeline, the next step was to begin crafting the UI.
 
 Pen and *paper*
 -------------
 
-Before touching any code, I like to prototype any initial ideas with ‘pen and paper’ (in this case, it was with a great iPad app called Paper[http://www.fiftythree.com/paper]). Mockups are great starting points. Any mistakes on paper are cheap and effortless to correct (unlike code). Mockups can also serve as great reference points further down a project’s life. Working top down from a mock up can serve as an effective way to plan what to do next.
+Before touching any code, I like to prototype any initial ideas with ‘pen and paper’ (in this the eletronic equivalent, an great iPad app called [Paper](http://www.fiftythree.com/paper)). Mockups are great starting points. Any mistakes on *paper* are cheap and effortless to correct (unlike code). Mockups can also serve as great reference points further down a project’s life. Working top down from a mock up can serve as an effective way to plan what to do next.
 
-The level of detail is a preference and project specific. In REWORK[link] they talks about using a sharpie pen to restrict the amount of detail. This is a neat trick to force a more layout oriented approach rather than worry about the nitty gritty. You’ll find yourself asking  ‘where shall I place the login button?’ instead of ‘should the login button have rounded corners?’.
+The level of detail is a preference and project specific. In [REWORK](http://www.amazon.co.uk/gp/product/0091929784/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0091929784&linkCode=as2&tag=baby04c1-21) they talks about using a sharpie pen to restrict the amount of detail. This is a neat trick to force a more layout oriented approach rather than worry about the nitty gritty. You’ll find yourself asking  ‘where shall I place the login button?’ instead of ‘should the login button have rounded corners?’.
 
 <div class="fit-img">
     <img src="/static/img/media/admino-mockup.png"/>

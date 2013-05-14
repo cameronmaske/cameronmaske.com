@@ -61,7 +61,6 @@ def recent_feed():
     articles = (p for p in pages if 'published' in p.meta)
 
     for article in articles:
-        print article['published']
         feed.add(article['title'], unicode(article.html),
                  content_type='html',
                  url=article.path,
