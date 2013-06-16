@@ -163,8 +163,6 @@ class File(object):
     PROGRESS_MIN_SIZE = (1024 * 1024) / 2 # 521 kb
 
     def __init__(self, site, path):
-        print site
-        print path
         self.site = site
         self.path = path
 
