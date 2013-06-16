@@ -1,6 +1,6 @@
 title: Designing a Website <br> Part 1 · Inspriation
 date: 2013-05-11
-published: false
+published: true
 topic: WEB DESIGN
 scripts: ['/static/js/libs/fitvids.js']
 intro: In this series of posts, I’ll be talking about building a website design from scratch. In part 1, we will explore some good starting points and helpful tips on getting the feel and mood of your design down.

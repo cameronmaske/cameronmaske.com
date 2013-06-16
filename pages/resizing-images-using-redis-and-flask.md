@@ -2,7 +2,7 @@ title: Resizing images using Flask and Redis.
 date: 2013-06-15
 published: true
 topic: WEB APPS
-intro: Recently I put together a mini-project that resizes images conventially through Flask and caches the thumbnal images in Redis.
+intro: Recently I put together a mini-project that resizes images conventionally through Flask and caches the thumbnal images in Redis.
 
 The code is all on [github](https://github.com/cameronmaske/puppy-eyes) and there is a [demo](http://puppy-eyes.herokuapp.com/) here to try it out! To resize an image, you pass the image's url as the url parameter "link" like so...
 
