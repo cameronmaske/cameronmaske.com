@@ -9,6 +9,7 @@ from flask import Flask, render_template, request, make_response
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from werkzeug.contrib.atom import AtomFeed
+from utils import strip_tags
 
 from deploy import Site
 
@@ -61,7 +62,7 @@ def recent_feed():
     articles = (p for p in pages if 'published' in p.meta)
 
     for article in articles:
-        feed.add(article['title'], unicode(article.html),
+        feed.add(strip_tags(article['title']), unicode(article.html),
                  content_type='html',
                  url=article.path,
                  author='Cameron Maske',
