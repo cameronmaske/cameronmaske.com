@@ -1,7 +1,9 @@
 Flask==0.9
 Flask-FlatPages==0.3
+Frozen-Flask==0.11
 Jinja2==2.6
 Markdown==2.2.1
 PyYAML==3.10
 Werkzeug==0.8.3
+boto==2.16.0
 wsgiref==0.1.2

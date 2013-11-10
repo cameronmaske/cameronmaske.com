@@ -7,32 +7,6 @@
   <link href="http://localhost/feed.atom" rel="self" />
   <generator>Werkzeug</generator>
   <entry xml:base="http://localhost/feed.atom">
-    <title type="text">3 Bookmarklets That Regularly Help Me With Web Design</title>
-    <id>3-bookmarklets-that-regularly-help-me-with-web-design</id>
-    <updated>2012-07-01T00:00:00Z</updated>
-    <published>2012-07-01T00:00:00Z</published>
-    <link href="3-bookmarklets-that-regularly-help-me-with-web-design" />
-    <author>
-      <name>Cameron Maske</name>
-    </author>
-    <content type="html">&lt;p&gt;Now, you might be wondering, what on earth is a bookmarklet? A &lt;a href="http://en.wikipedia.org/wiki/Bookmarklet"&gt;bookmarklet&lt;/a&gt; is a browser addon stored in a bookmark. When clicked, they use javascript to add in functionality to browser. If that's still not clear, just watch one of the videos below, what they do should become more apparent! Now, without further ado, 3 that have helped me with web design!&lt;/p&gt;
-&lt;h1&gt;&lt;a href="http://livejs.com/"&gt;live.js&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;First on the list is &lt;strong&gt;live.js&lt;/strong&gt;. This bookmarklet will monitor the current page's CSS and Javascript, looking for any changes. If any changes are applied to the CSS, they are dynamically applied to the HTML. If any changes are made to the Javascript, the page will reload.&lt;/p&gt;
-&lt;iframe src="http://www.screenr.com/embed/Tpws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;This has been done before in &lt;a href="http://livereload.com/"&gt;dedicated apps&lt;/a&gt;, but I've found live.js is such a lightweight and easy solution. I'll often kick open my text editor, head over to the deployment page and fire it up. It's quick and simple.&lt;/p&gt;
-&lt;h1&gt;&lt;a href="http://fount.artequalswork.com/"&gt;Fount&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Next up is &lt;strong&gt;Fount&lt;/strong&gt;. Fount will tell you which web font in your font-stack you are actually seeing â€“ not just what is supposed to be seen. Itâ€™ll also tell you the font size, weight, and style.&lt;/p&gt;
-&lt;iframe src="http://www.screenr.com/embed/eCws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;I love seeing great typography in pages, it's a great source of inspiration. Fount let's me quickly see what fonts a page uses and allows me to keep it in mind for any future projects I might have.&lt;/p&gt;
-&lt;h1&gt;&lt;a href="http://markup.io/"&gt;Markup.io&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Finally, there is &lt;strong&gt;Markup&lt;/strong&gt;. Markup lets you draw on any webpage with a variety of tools to express your thoughts, make a point or just simply edit it.&lt;/p&gt;
-&lt;iframe src="http://www.screenr.com/embed/iCws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
-
-&lt;p&gt;It's worth it's weight in gold when asking for design critique. Instead of someone telling you an that "whatsit" elements looks great/terrible, they can highlight it straight on the web page and send it over. Have any of these helped, do you use any bookmarlets that you'd like to recommended? Let me know in the comments.&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="http://localhost/feed.atom">
     <title type="text">Designing a Website  Part 1 · Inspriation</title>
     <id>designing-a-website-part-1-inspriation</id>
     <updated>2013-05-11T00:00:00Z</updated>
@@ -104,15 +78,41 @@ The level of detail in mockup varies between projects. I’ll try to get a mocku
     <author>
       <name>Cameron Maske</name>
     </author>
-    <content type="html">&lt;p&gt;The code is all on &lt;a href="https://github.com/cameronmaske/puppy-eyes"&gt;github&lt;/a&gt; and there is a &lt;a href="http://puppy-eyes.herokuapp.com/"&gt;demo&lt;/a&gt; here to try it out! To resize an image, you pass the image's url as the url parameter "link" like so...&lt;/p&gt;
+    <content type="html">&lt;p&gt;The code is all on &lt;a href="https://github.com/cameronmaske/puppy-eyes"&gt;github&lt;/a&gt; and there is a &lt;a href="http://puppy-eyes.herokuapp.com/"&gt;demo&lt;/a&gt; here to try out! To resize an image, you pass the image's url as the url parameter "link" like so...&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://puppy-eyes.herokuapp.com/?link=http://i.imgur.com/75Jr3.jpg"&gt;http://puppy-eyes.herokuapp.com/?link=http://i.imgur.com/75Jr3.jpg&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And the server will return the resized &lt;em&gt;thumbnail&lt;/em&gt; image!&lt;/p&gt;
 &lt;h2&gt;So how does it work?&lt;/h2&gt;
-&lt;p&gt;On the backend, the server looks into the Redis server (a very fast key-store) to see if the resized image already exists (based on the link passed in and sizing options). If it does, great! It get's turned back into an image file from the stored string and servered back.
-If it does not exist, the image is downloaded, resized (by PIL), stored in Redis as a string (essentially caching it if a repeat call it made) and then servered back.&lt;/p&gt;
+&lt;p&gt;Using &lt;a href="http://flask.pocoo.org/"&gt;flask&lt;/a&gt; on the backend, a check is run to see if the resized image already exists in the &lt;a href="http://redis.io/"&gt;redis server&lt;/a&gt; (a very fast key-store) based on the image's url and sizing options passed in. If it does, great! The stored string in the redis is turned back into an image file and served back as the response.
+If it does not exist, the image is downloaded, resized (by &lt;a href="http://www.pythonware.com/products/pil/"&gt;PIL&lt;/a&gt;), stored in redis as a string (essentially caching it if a repeat call it made) and then served back.&lt;/p&gt;
 &lt;p&gt;If for some reason you linked to something that isn't an image, it should just redirect through.&lt;/p&gt;
-&lt;p&gt;This mini-project came out of the frustration of images in emails. Getting images with varying heights and widths to appear the same size across popular image clients is a nightmare. Some support max-width, some support only width, some don't even support height (I'm looking at you &lt;a href="http://www.campaignmonitor.com/css/"&gt;Outlook&lt;/a&gt;).
-While this wasn't the choosen solution in the end, I thinks it's a neat use case of how both the simplicity (and power) of Redis and Flask play nicely together!&lt;/p&gt;
+&lt;p&gt;This mini-project came out of the frustration of images in emails. Getting images with varying heights and widths to appear the same size across popular email clients is a nightmare. Some support max-width, some support only width, some don't even support height (I'm looking at you &lt;a href="http://www.campaignmonitor.com/css/"&gt;Outlook&lt;/a&gt;).
+While this wasn't the chosen solution in the end, I thinks it's a neat use case of how both the simplicity (and power) of redis and flask play nicely together!&lt;/p&gt;
 &lt;p&gt;Let me know if you have any questions in the comments!&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="http://localhost/feed.atom">
+    <title type="text">3 Bookmarklets That Regularly Help Me With Web Design</title>
+    <id>3-bookmarklets-that-regularly-help-me-with-web-design</id>
+    <updated>2012-07-01T00:00:00Z</updated>
+    <published>2012-07-01T00:00:00Z</published>
+    <link href="3-bookmarklets-that-regularly-help-me-with-web-design" />
+    <author>
+      <name>Cameron Maske</name>
+    </author>
+    <content type="html">&lt;p&gt;Now, you might be wondering, what on earth is a bookmarklet? A &lt;a href="http://en.wikipedia.org/wiki/Bookmarklet"&gt;bookmarklet&lt;/a&gt; is a browser addon stored in a bookmark. When clicked, they use javascript to add in functionality to browser. If that's still not clear, just watch one of the videos below, what they do should become more apparent! Now, without further ado, 3 that have helped me with web design!&lt;/p&gt;
+&lt;h1&gt;&lt;a href="http://livejs.com/"&gt;live.js&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;First on the list is &lt;strong&gt;live.js&lt;/strong&gt;. This bookmarklet will monitor the current page's CSS and Javascript, looking for any changes. If any changes are applied to the CSS, they are dynamically applied to the HTML. If any changes are made to the Javascript, the page will reload.&lt;/p&gt;
+&lt;iframe src="http://www.screenr.com/embed/Tpws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This has been done before in &lt;a href="http://livereload.com/"&gt;dedicated apps&lt;/a&gt;, but I've found live.js is such a lightweight and easy solution. I'll often kick open my text editor, head over to the deployment page and fire it up. It's quick and simple.&lt;/p&gt;
+&lt;h1&gt;&lt;a href="http://fount.artequalswork.com/"&gt;Fount&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Next up is &lt;strong&gt;Fount&lt;/strong&gt;. Fount will tell you which web font in your font-stack you are actually seeing â€“ not just what is supposed to be seen. Itâ€™ll also tell you the font size, weight, and style.&lt;/p&gt;
+&lt;iframe src="http://www.screenr.com/embed/eCws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I love seeing great typography in pages, it's a great source of inspiration. Fount let's me quickly see what fonts a page uses and allows me to keep it in mind for any future projects I might have.&lt;/p&gt;
+&lt;h1&gt;&lt;a href="http://markup.io/"&gt;Markup.io&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Finally, there is &lt;strong&gt;Markup&lt;/strong&gt;. Markup lets you draw on any webpage with a variety of tools to express your thoughts, make a point or just simply edit it.&lt;/p&gt;
+&lt;iframe src="http://www.screenr.com/embed/iCws" width="350" height="250" frameborder="0" style="margin: 0 auto; display:block;"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;It's worth it's weight in gold when asking for design critique. Instead of someone telling you an that "whatsit" elements looks great/terrible, they can highlight it straight on the web page and send it over. Have any of these helped, do you use any bookmarlets that you'd like to recommended? Let me know in the comments.&lt;/p&gt;</content>
   </entry>
 </feed>
