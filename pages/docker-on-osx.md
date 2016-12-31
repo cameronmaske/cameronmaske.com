@@ -16,7 +16,7 @@ While, hopefully one day Docker For Mac's filesystem performance issues will be 
 
 ### Step 1. Install Docker Toolbox
 
-Download the `.pkg` from https://github.com/docker/toolbox/releases/tag/v1.12.3 and follow the GUI's install steps.
+Download the `.pkg` from https://github.com/docker/toolbox/releases/tag/v1.12.5 and follow the GUI's install steps.
 
 This will ensure the following packages are installed...
 * VirtualBox
@@ -48,7 +48,7 @@ With those values chosen, modify then run the following command...
 
 ```
 docker-machine create -d virtualbox \
-    --virtualbox-boot2docker-url=https://github.com/boot2docker/boot2docker/releases/download/v1.12.3/boot2docker.iso default \
+    --virtualbox-boot2docker-url=https://github.com/boot2docker/boot2docker/releases/download/v1.12.5/boot2docker.iso default \
     --virtualbox-memory "4096" \
     --virtualbox-disk-size "30000"
 ```
@@ -108,7 +108,7 @@ alias dm-stop="docker-machine stop default"
 ### Step 5. Setting up `localdocker`.
 
 With the VM running, run `docker-machine ip default` and note down the IP (mine is `192.168.99.100`).
-For convenience, I like to setup the host alias `localdocker` to use instead of the IP.  
+For convenience, I like to setup the host alias `localdocker` to use instead of the IP.
 
 Open `/etc/hosts` with your terminal of choice (will need sudo access).
 
