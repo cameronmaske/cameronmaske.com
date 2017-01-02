@@ -1,5 +1,6 @@
 title: Running Docker on OSX
 date: 2017-01-01
+published: true
 topic: DOCKER
 intro: In this post, I'll cover the best way I've found to run Docker in my local OSX development environment.
 

@@ -39,10 +39,10 @@ class Site(object):
 
         # Make sure we have internet
         if not internetWorking():
-            logging.info('There does not seem to be internet here, check your connection')
+            print('There does not seem to be internet here, check your connection')
             return
 
-        logging.debug('Start upload')
+        print('Start upload')
 
         # Get access information from the config or the user
         awsAccessKey = self.config.get('aws-access-key') or \
@@ -51,16 +51,17 @@ class Site(object):
             getpass._raw_input('Amazon secret access key (will be saved in keychain): ').strip()
 
         # Try to fetch the buckets with the given credentials
-        connection = boto.connect_s3(awsAccessKey.strip(), awsSecretKey.strip())
+        from boto.s3.connection import OrdinaryCallingFormat
+        connection = boto.connect_s3(awsAccessKey.strip(), awsSecretKey.strip(), calling_format=OrdinaryCallingFormat())
 
-        logging.debug('Start get_all_buckets')
+        print('Start get_all_buckets')
         # Exit if the information was not correct
         try:
             buckets = connection.get_all_buckets()
         except:
-            logging.info('Invalid login credentials, please try again...')
+            print('Invalid login credentials, please try again...')
             return
-        logging.debug('end get_all_buckets')
+        print('end get_all_buckets')
 
         # If it was correct, save it for the future
         self.config.set('aws-access-key', awsAccessKey)
@@ -74,13 +75,13 @@ class Site(object):
         if awsBucketName not in [b.name for b in buckets]:
             if raw_input('Bucket does not exist, create it? (y/n): ') == 'y':
 
-                logging.debug('Start create_bucket')
+                print('Start create_bucket')
                 try:
                     awsBucket = connection.create_bucket(awsBucketName, policy='public-read')
                 except boto.exception.S3CreateError, e:
-                    logging.info('Bucket with name %s already is used by someone else, please try again with another name' % awsBucketName)
+                    print('Bucket with name %s already is used by someone else, please try again with another name' % awsBucketName)
                     return
-                logging.debug('end create_bucket')
+                print('end create_bucket')
 
                 # Configure S3 to use the index.html and error.html files for indexes and 404/500s.
                 awsBucket.configure_website('index.html', 'error.html')
@@ -89,8 +90,8 @@ class Site(object):
                 self.config.set('aws-bucket-name', awsBucketName)
                 self.config.write()
 
-                logging.info('Bucket %s was selected with website endpoint %s' % (self.config.get('aws-bucket-name'), self.config.get('aws-bucket-website')))
-                logging.info('You can learn more about s3 (like pointing to your own domain) here: https://github.com/koenbok/Cactus')
+                print('Bucket %s was selected with website endpoint %s' % (self.config.get('aws-bucket-name'), self.config.get('aws-bucket-website')))
+                print('You can learn more about s3 (like pointing to your own domain) here: https://github.com/koenbok/Cactus')
 
 
             else: return
@@ -104,7 +105,7 @@ class Site(object):
         self.config.set('aws-bucket-website', awsBucket.get_website_endpoint())
         self.config.write()
 
-        logging.info('Uploading site to bucket %s' % awsBucketName)
+        print('Uploading site to bucket %s' % awsBucketName)
 
         # Upload all files concurrently in a thread pool
         totalFiles = multiMap(lambda p: p.upload(awsBucket), self.files())
@@ -112,14 +113,14 @@ class Site(object):
 
 
         # Display done message and some statistics
-        logging.info('\nDone\n')
+        print('\nDone\n')
 
-        logging.info('%s total files with a size of %s' % \
+        print('%s total files with a size of %s' % \
             (len(totalFiles), fileSize(sum([r['size'] for r in totalFiles]))))
-        logging.info('%s changed files with a size of %s' % \
+        print('%s changed files with a size of %s' % \
             (len(changedFiles), fileSize(sum([r['size'] for r in changedFiles]))))
 
-        logging.info('\nhttp://%s\n' % self.config.get('aws-bucket-website'))
+        print('\nhttp://%s\n' % self.config.get('aws-bucket-website'))
 
 
     def files(self):

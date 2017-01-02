@@ -4,6 +4,7 @@
 import sys
 import shutil
 import os
+import datetime
 
 from flask import Flask, render_template, request, make_response
 from flask_flatpages import FlatPages
@@ -23,8 +24,13 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
+# Hack to play nicely with an updated werkzeug. Force to a datetime instead of date.
+for page in pages:
+    date = page.meta['date']
+    page.meta['date'] = datetime.datetime(date.year, date.month, date.day)
 
-#The homepage: e.g. cameronmaske.com/
+
+# The homepage: e.g. cameronmaske.com/
 @app.route('/')
 def index():
     # If in debug, show all articles.
