@@ -5227,7 +5227,7 @@ a.thumbnail:hover {
 }
 .navbar {
   z-index: 1000;
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 .navbar .brand {
   margin: 0;
@@ -5373,10 +5373,10 @@ a.thumbnail:hover {
   text-shadow: 0 0 2px black;
 }
 .sans-serif {
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 .serif {
-  font-family: "ff-tisa-web-pro", serif;
+  font-family: "PT Serif", serif;
 }
 a {
   color: #f08e05;
@@ -5404,7 +5404,7 @@ a:hover {
 body {
   font-size: 18px;
   line-height: 1.6666666666666667;
-  font-family: "ff-tisa-web-pro", serif;
+  font-family: "PT Serif", serif;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
@@ -5424,7 +5424,7 @@ h1 {
   font-size: 350%;
   line-height: 1.1746031746031746;
   font-weight: 700;
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
   text-align: center;
   letter-spacing: 1px;
   margin-top: 60px;
@@ -5436,7 +5436,7 @@ h2 {
   letter-spacing: 1px;
 }
 .title h1 {
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 .subtitle {
   height: 4px;
@@ -5468,7 +5468,7 @@ hr {
   margin-bottom: 25px;
   letter-spacing: 1px;
   color: #666464;
-  font-family: "ff-tisa-web-pro", serif;
+  font-family: "PT Serif", serif;
 }
 .summary {
   padding: 30px 0;
@@ -5480,7 +5480,7 @@ hr {
 }
 .summary .date {
   font-weight: 700;
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
   margin-bottom: 25px;
   line-height: 25px;
 }
@@ -5560,14 +5560,14 @@ hr {
   background-position: 0 0;
 }
 .bio .by {
-  font-family: "ff-tisa-web-pro", serif;
+  font-family: "PT Serif", serif;
   font-weight: 200;
   color: #DBDBDB;
   font-style: italic;
 }
 .bio h2 {
   margin-bottom: 15px;
-  font-family: "futura-pt", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 .bio p {
   margin-top: 0;

@@ -1,11 +1,32 @@
-To run locally.
+# Development
 
-	python builder.py
+Install the following requirements in a virtualenv.
+```
+pip install -r requirements.txt
+```
 
-To generate the site files.
+Run the server locally.
+```
+python builder.py
+```
 
-	python builder.py build
+Compile the less manually using...
+```
+npm install -g less
+lessc static/less/style.less static/css/style.css
+```
 
-To deploy to S3
+Then visit at [127.0.0.1:8000](http://127.0.0.1:8000)
 
-	python builder.py deploy
+# Deployment
+
+To generate the site files, run...
+
+```
+python builder.py build
+```
+
+To deploy to S3, run...
+```
+python builder.py deploy
+```
