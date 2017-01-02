@@ -137,9 +137,10 @@ As a quick check run `docker ps` to verify everything is working. You should see
 
 ### Benchmarks.
 
-On my 8GB 2013 Macbook Air, I benchmarked the file system's performance (non-shared native volume vs shared volume).
+On my 8GB 2013 Macbook Air, I benchmarked the file system's performance of this approach vs Docker for Mac.
 
-Non-shared volume test.
+I started with a control test of a native non-shared volume in a container.
+
 ```
 $ docker run --rm -it -w /tmp/ alpine /bin/sh
 $ time dd if=/dev/zero of=speedtest bs=1024 count=100000
@@ -150,7 +151,7 @@ user    0m 0.01s
 sys 0m 0.22s
 ```
 
-Shared volume test
+Then with a shared volume test with Docker Machine and NFS enabled (~10x slower than native).
 ```
 $ docker run --rm -it -v $PWD:$PWD -w $PWD alpine /bin/sh
 $ time dd if=/dev/zero of=speedtest bs=1024 count=100000
@@ -161,3 +162,23 @@ real    0m 2.36s
 user    0m 0.00s
 sys 0m 0.18s
 ```
+
+Then a shared volume test with Docker For Mac (~190x slower than native).
+```
+$ docker run --rm -it -v $PWD:$PWD -w $PWD alpine /bin/sh
+$ time dd if=/dev/zero of=speedtest bs=1024 count=100000
+100000+0 records in
+100000+0 records out
+real    0m 45.11s
+user    0m 0.19s
+sys 0m 1.91s
+```
+
+There is still room for improvement, as we aren't at native file system performance yet, but the result is still usable.
+
+# Conclusion
+
+Hopefully soon, this post will be outdated and Docker for Mac file system issues will be resolved. Until then, this setup works for my development needs.
+
+How do you run Docker on OSX? Do you have a better setup than what I've outlined above?
+If so, I love to hear from you. Let me know in the comments or by tweeting at [me](https://twitter.com/cameronmaske).
