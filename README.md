@@ -30,3 +30,5 @@ To deploy to S3, run...
 ```
 python builder.py deploy
 ```
+
+When prompted enter `www.cameronmaske.com`
