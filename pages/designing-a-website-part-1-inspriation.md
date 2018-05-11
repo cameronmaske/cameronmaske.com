@@ -1,5 +1,5 @@
 title: Designing a Website
-date: 2013-05-11
+date: 2013-06-11
 published: true
 topic: WEB DESIGN
 scripts: ['/static/js/libs/fitvids.js']
@@ -38,7 +38,7 @@ When browsing the web every time I come across a design that I find interesting 
 Below are are some select snippets.
 
 
-Snippet #1 - [emberjs.com](www.emberjs.com)
+Snippet #1 - [emberjs.com](https://www.emberjs.com)
 ------------------------
 
 [<div class="fit-img">

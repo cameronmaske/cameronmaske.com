@@ -4,7 +4,7 @@ published: true
 topic: PROGRAMMING
 intro: Side projects are a great way to work on that 'pet problem' or 'idea' thats been gnawing a way in your head the last week. But aside from scratching that itch, I believe they are a vital tool in making you a better developer. I thought I'd retrospectively look over my various oddities of side project from the last year to see what I've learn from them.
 
-# [Puppy Eyes](puppystream.trackmaven.com)
+# [Puppy Eyes](http://puppy-eyes.herokuapp.com/)
 ## What is it?
 A simple flask web app that resizes and caches images as thumbnails. [It's on GitHub!](https://github.com/cameronmaske/puppy-eyes/)
 
@@ -15,7 +15,7 @@ This side project was an the eye opening experience to just how powerful Redis c
 
 I also used Vagrant + Puppet to boot up a separate Linux VM as development environment. Allowing me to have a full stack virtual environment, one that I could alter/destroy/reload without consequence or worrying.
 
-# [FindYouFlowers](findyouflowers.herokuapp.com)
+# [FindYouFlowers](fhttp://findyouflowers.herokuapp.com/)
 ## What is it?
 An app that let's you quickly search for that prefect bouquet for their special someone.
 Stack wise, it a a flask app with MongoDB on the backend and AngularJS on the client. [It's on GitHub!](https://github.com/cameronmaske/find-you-flowers)
