@@ -12,8 +12,8 @@ python builder.py
 
 Compile the less manually using...
 ```
-npm install -g less
-lessc static/less/style.less static/css/style.css
+npm install -g less@1.3
+lessc static/less/style.less static/css/style.css;
 ```
 
 Then visit at [127.0.0.1:8000](http://127.0.0.1:8000)

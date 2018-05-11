@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+flask = "==0.9"
+flask-flatpages = "==0.6"
+frozen-flask = "==0.11"
+"jinja2" = "==2.6"
+markdown = "==2.2.1"
+pyyaml = "==3.10"
+werkzeug = "==0.8.3"
+boto = "==2.16.0"
+wsgiref = "==0.1.2"
+
+[requires]
+python_version = "2.7"

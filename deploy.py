@@ -45,7 +45,7 @@ class Site(object):
         print('Start upload')
 
         # Get access information from the config or the user
-        awsAccessKey = self.config.get('aws-access-key') or \
+        awsAccessKey = self.config.get('aws-access--key') or \
             raw_input('Amazon access key (http://bit.ly/Agl7A9): ').strip()
         awsSecretKey = getpassword('aws', awsAccessKey) or \
             getpass._raw_input('Amazon secret access key (will be saved in keychain): ').strip()
