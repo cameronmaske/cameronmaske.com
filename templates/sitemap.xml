@@ -3,7 +3,7 @@
     {% for article in articles %}
     <url>
         <loc>http://www.cameronmaske.com{{ url_for("page", path=article.path) }}</loc>
-        <lastmod>{{ article.date.isoformat() }}</lastmod>
+        <lastmod>{{ article.date.date().isoformat() }}</lastmod>
     </url>
     {% endfor %}
 </urlset>
