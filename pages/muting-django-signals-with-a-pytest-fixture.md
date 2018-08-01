@@ -201,7 +201,7 @@ And here is how to run all tests with signals disabled
     docker-compose run api pytest tests/intergration_tests/example/test_models.py -m "not enable_signals"
 
 
-# That's it!
+## That's it!
 
 If you would like to check out the code used for this project, it's [available on Github](https://github.com/cameronmaske/django-drf-testing/tree/signals-example). 
 
