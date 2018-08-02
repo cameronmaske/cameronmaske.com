@@ -4,6 +4,10 @@
     {{ article.title|striptags }}
 {% endblock %}
 
+{% if article.meta_description %}
+{% block meta_description %} {{ meta_description }} {% endblock %}
+{% endif %}
+
 {% block content %}
     <h1>
         {{ article.title|safe }}

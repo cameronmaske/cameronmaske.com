@@ -3,23 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="Cameron Maske's blog">
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://cameronmake.com/feed.atom">
-	<meta name="Description" content="The ramblings of a software engineer with a love for web design and typography">
-
+	<meta name="description" content="{% block meta_description %}The ramblings of a software developer. Pragmatic advice on everything from Django, Pytest to Docker.{% endblock %}">
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif" rel="stylesheet">
-
 	<title>
-		{% block title %}
-		Programming, startups and life
-		{% endblock %}
-		· Cameron Maske
+		{% block title %}Programming, startups and life{% endblock %} · Cameron Maske
 	</title>
 
 </head>

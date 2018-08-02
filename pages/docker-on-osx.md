@@ -1,4 +1,4 @@
-title: Running Docker on OSX
+title: How To Run Docker on OSX With NSF (And Avoid Docker for Mac Slow Preformance)
 date: 2017-01-01
 published: true
 topic: DOCKER
