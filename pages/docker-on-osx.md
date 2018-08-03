@@ -1,7 +1,12 @@
-title: How To Run Docker on OSX With NSF (And Avoid Docker for Mac Slow Preformance)
+title: How To Run Docker On OSX With NSF <br/>(And Avoid Docker for Mac Slow Performance)
 date: 2017-01-01
 published: true
 topic: DOCKER
+summary_image: img/cards/docker-for-mac.png
+twitter_title: How To Run Docker On OSX With NSF (And Avoid Docker for Mac Slow Performance)
+twitter_description: This guide show you how to overcome Docker For Mac's slow filesystem performance, by using Docker Toolbox and docker-machine-nfs (~20x faster).
+description: This guide show you how to overcome Docker For Mac's slow filesystem performance, by using Docker Toolbox and docker-machine-nfs (~20x faster).
+intro: In this post, you'll learn how to implement a global pytest fixture to automatically mute (and optionally unmute) Django signals in your tests.
 intro: In this post, I'll cover the best way I've found to run Docker in my local OSX development environment.
 
 This post won't cover (and has covered in much better detail) [what Docker is](https://www.safaribooksonline.com/library/view/introduction-to-docker/9781491916179/), or [the benefits](https://www.oreilly.com/ideas/what-containers-can-do-for-you) of using it.

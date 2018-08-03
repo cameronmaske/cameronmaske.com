@@ -6,11 +6,17 @@
 	<meta name="viewport" content="width=device-width">
 
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://cameronmake.com/feed.atom">
-	<meta name="description" content="{% block meta_description %}The ramblings of a software developer. Pragmatic advice on everything from Django, Pytest to Docker.{% endblock %}">
+	{% block meta_description %}
+	<meta name="description" content="The ramblings of a software developer. Pragmatic advice on everything from Django, Pytest to Docker."
+	{% endblock %}>
+	<meta name="twitter:site" content="@cameronmaske">
+	<meta name="twitter:creator" content="@cameronmaske">
+
+	{% block meta %}
+	{% endblock %}
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif" rel="stylesheet">
 	<title>
 		{% block title %}Programming, startups and life{% endblock %} · Cameron Maske
 	</title>
@@ -45,6 +51,8 @@
 			<a href="https://tryoutglasses.com">Try Out Glasses</a>
 		</p>
 	</footer>
+
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 
 	{% block scripts %}
