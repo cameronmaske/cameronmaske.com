@@ -15,7 +15,7 @@
 
 <meta property="og:title" content="{{ article.title }}" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.cameronmaske.com/{{ request.path }}" />
+<meta property="og:url" content="https://www.cameronmaske.com{{ request.path }}" />
 {% if article.meta.summary_image %}
 <meta property="og:image" content="{{ url_for('static', filename=article.meta.summary_image) }}" />
 {% endif %}
