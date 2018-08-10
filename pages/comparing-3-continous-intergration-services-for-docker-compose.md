@@ -1,40 +1,40 @@
-title: Comparing 3 Continous Intergration Services For a Docker Compose Project
+title: Comparing 3 Continuous Intergration Services For a Docker Compose Project
 date: 2018-08-11
 published: true
 topic: DOCKER, CI
 summary_image: img/cards/ci.png
 twitter_title: Comparing Codeship, CircleCI and TravisCI For a Docker Compose Project
-twitter_description: Find the best continous intergration service for your Docker Compose project, by speed, cost and setup ease. Using a sample Django Rest Framework repo, this guide goes into depth about how to configuring each CI, the pricing options and measures the speed to build the Docker images and run the test suite. 
-description: Find the best continous intergration service for your Docker Compose project, by speed, cost and setup ease. Using a sample Django Rest Framework repo, this guide goes into depth about how to configuring each CI, the pricing options and measures the speed to build the Docker images and run the test suite. 
+twitter_description: Find the best continuous intergration service for your Docker Compose project, by speed, cost and setup ease. Using a sample Django Rest Framework repo, this guide goes into depth about how to configuring each CI, the pricing options and measures the speed to build Docker images and run the test suite. 
+description: Find the best continuous intergration service for your Docker Compose project, by speed, cost and setup ease. Using a sample Django Rest Framework repo, this guide goes into depth about how to configuring each CI, the pricing options and measures the speed to build Docker images and run the test suite. 
 intro: In this post, I'm going to compare 3 different hosted continuous integration services (Codeship, CircleCI and Travis) for a Docker Compose project.
 
 ## What I'm looking for 
 
 I'll be judging the options based on the 3 main things I look for from a CI. 
 
-* Speed. I want something that will build and run my tests as fast as possible. I want to minimize time spent waiting for my pull request's check for to green (or red).
+* Speed. I want something that will build and run my tests as fast as possible. I want to minimize the time spent waiting for my pull request's checks to pass or fail.
 * Cost. How much does it cost to use and how does that scale as your project/team grows. I'll also compare the costs of public and open source project vs a private one. 
-* Setup complexity and ease. The less time spent to get everything up and running the better. Good quality documentation that aide the process is a huge plus.
+* Setup complexity and ease. The less time spent to get everything up and running the better. Is the documentation useful? Are there example projects for a quickstart?.
 
 This post doesn't focus on pushing, publishing Docker images or deploying them as services.
 
-If you have experiences let me know about it in the comments below, or a PR is welcome to the repo in question!
+If you have experiences with those aspects and you'd like to share, feel free to drop a comments below.
 
 ## Our sample project
 
-To compare our CIs, [I have set up a Python-based Django + Django Rest Framework application](https://github.com/cameronmaske/django-drf-testing/tree/testing-comparison) that uses Docker Compose for local development. It uses pytest as it's test runner, and needs to run both unit tests and integrations test against a Postgres database. The project has purposefully resource-heavy dummy tests setup to test the performance speed of the CI solutions. 
+To compare our CIs, [I have set up a Python-based Django + Django Rest Framework application](https://github.com/cameronmaske/django-drf-testing/tree/testing-comparison) that uses Docker Compose for it's local development. It uses pytest as its test runner and needs to run both unit tests and integrations tests against a Postgres database. The project has [purposefully resource-heavy dummy tests setup](The project has [purposefully resource-heavy dummy tests setup] to test the performance speed of the CI solutions. ) to test the performance speed of each CI solution. 
 
 # [Codeship Pro](https://codeship.com/features/pro)
 
-Codeship has two offerings, Basic and Pro. Pro includes Docker support, so we'll only be looking at that one. 
+Codeship has two offerings, Basic and Pro. Pro includes Docker support, so we will only be looking at that one. 
 
 ## Setup
 
-Codeship needs require two key files to setup your Docker containers and then run the required tests.
+Codeship requires two key files to setup your Docker containers and then run the required tests.
 
 ### Codeship Services File [`codeship-services.yml`](https://github.com/cameronmaske/django-drf-testing/blob/testing-comparison/codeship-services.yml)
 
-Here you outline what services Docker your test suite needs.
+Here you outline what Docker services your test suite needs.
 This file is very similar to a `docker-compose.yml`, in fact, in its absence, Codeship will automatically search for a `docker-compose.yml` file to use in its place.
 
     # codeship-services.yml
@@ -56,12 +56,12 @@ This file is very similar to a `docker-compose.yml`, in fact, in its absence, Co
             - POSTGRES_DB=db
 
 
-However, a few of the configuration options different from `docker-compose.yml`. For example:
+However, a few of the configuration options differ from `docker-compose.yml`. For example:
 
 * [`encrypted_env_file`](https://documentation.codeship.com/pro/builds-and-configuration/services/#environment-variables) is added. This lets you securely store encrypted environment variables in your source control to be used by your services. Using Codeship's CLI [`jet`](https://documentation.codeship.com/pro/jet-cli/usage-overview/) environment variables can be added, edited and removed. 
-* [`cached`](https://documentation.codeship.com/pro/builds-and-configuration/services/#caching-the-docker-image) is added. This enables Codeship to cache a built image in their own secure registry after a build is finished. Allowing the CI to pull the image, rather than re-build each time. Setup correctly, this can help save time.
+* [`cached`](https://documentation.codeship.com/pro/builds-and-configuration/services/#caching-the-docker-image) is added. This enables Codeship to cache a built image in their own secure registry after a build is finished. Allowing the CI to pull the image, rather than re-building each time. When setup correctly, this can help save time.
  
-Not all configuration keys are available, some, [including `privileged` will be ignored](https://documentation.codeship.com/pro/builds-and-configuration/services/#unavailable-features). 
+Not all configuration keys are available, [including `privileged`](https://documentation.codeship.com/pro/builds-and-configuration/services/#unavailable-features). 
 
 ### Codeship Steps File [`codeship-steps.yml`](https://github.com/cameronmaske/django-drf-testing/blob/testing-comparison/codeship-steps.yml)
 
@@ -75,33 +75,33 @@ After your services are built/pulled, [this file defines what commands the servi
 
 For our project, this is fairly simple. However, more advanced usages allow you too:
 
-* [Paralleize steps](https://documentation.codeship.com/pro/builds-and-configuration/steps/#parallelizing-steps-and-tests). Which spin up separate containers to run simultaneously, if setup correctly make better use of the host machines resources to run test faster.
+* [Parallelize steps](https://documentation.codeship.com/pro/builds-and-configuration/steps/#parallelizing-steps-and-tests). This spins up separate containers to run simultaneously. If setup correctly this can make better use of the host machine's resources to run tests faster.
 * [Limit specific commands to specific branches.](https://documentation.codeship.com/pro/builds-and-configuration/steps/#limiting-steps-to-specific-branches-or-tags)
 
 ## Pricing 
 
 Open source projects on Codeship are free.
  
-They have a free tier plan, that includes: 
+They have a free plan, that includes: 
 
 * 100 builds a month
 * 1 concurrent build
 * 1 parallel test pipeline
 * Unlimited projects/users/teams
 
-Their pricing starts at $75/month. This gives you 1 concurrent build on 1 small instance (2 VCPU, 3.75 GB Memory). Pricing scales linearly by how many concurrent builds on what size instances. 
+Their pricing starts at $75/month. This gives you 1 concurrent build on 1 small instance (2 VCPU, 3.75 GB Memory). Pricing scales linearly by the number of instances and their size. 
 
-Codeship Pro builds run on individual [EC2 instances running in the `us-east-1` region](https://documentation.codeship.com/general/about/vm-and-infrastructure/). 
-They all use a fixed version of Docker (18.03, the latest stable release at the time of writing)
+Codeship Pro builds run on individual [EC2 instances](https://documentation.codeship.com/general/about/vm-and-infrastructure/) running in the `us-east-1` region. 
+They all use a fixed version of Docker (18.03, the latest stable release when this was written).
 
 # [CircleCI 2.0](https://circleci.com/)
 
-For Docker-based projects, CircleCI enables you to run jobs in one of two virtual environments:
+For Docker-based projects, CircleCI enables you to run jobs in one of [two virtual environments](https://circleci.com/docs/2.0/executor-types/):
 
-* Using Docker images (`executor_type=docker`). 
-* Or in dedicated Linux VM image (`executor_type=machine`).
+* In Docker images (`executor_type=docker`). 
+* In a dedicated Linux VM (`executor_type=machine`).
 
-I prefer using the `machine` executor, as the configuration is simpler and seems easier to integrate with a [Docker Compose project](https://circleci.com/docs/2.0/docker-compose/). However, [CircleCI documentation's notes](https://circleci.com/docs/2.0/docker-compose/#using-docker-compose-with-machine-executor) that use of `machine` may require additional fees in a future pricing update.
+I prefer using the `machine` executor, as the configuration is simpler and seems easier to integrate with a [Docker Compose project](https://circleci.com/docs/2.0/docker-compose/). However, [CircleCI documentation's notes](https://circleci.com/docs/2.0/docker-compose/#using-docker-compose-with-machine-executor) that the use of the `machine` executor may require an additional fee in a future pricing update.
 
 *I've reached out to CircleCI's support to clarify what that may mean, and will update this post with that information if they reply.*
 
@@ -140,16 +140,16 @@ You can control the jobs orchestration using a separate option called [workflows
 
 Open source projects are free on CircleCI. In their [FAQ](https://circleci.com/pricing/#faq-section-linux) they state they offer up to 4 containers for public projects. 
 
-They have a free tier plan, that includes:
+They have a free plan, that includes:
 
 * 1 container limited to 1500 build minutes per month. 
 * Unlimited projects/users
 
 After which, you pay $50 per container (and have unlimited build minutes per month). Each container allows you to run 1 concurrent job. Multiple containers allow you to either run multiple builds at the same time or single builds with parallel jobs. 
 
-Each `machine` executor (run on a container) has [2 CPU @ 2.3 GHz and 8GB of Memory](https://circleci.com/docs/2.0/executor-types/#using-machine).
+Each CircleCI build container, when run as an `machine` executor has [2 CPU @ 2.3 GHz and 8GB Memory](https://circleci.com/docs/2.0/executor-types/#using-machine).
 
-You can also pay extra (price is currently private) to enable [Docker Layer Caching](https://circleci.com/docs/2.0/docker-layer-caching/) which could speed up large image builds. I've reached out to CircleCI's support about how much this costs and will update this post if I receive a reply. 
+You can also pay extra (how much is currently private) to enable [Docker Layer Caching](https://circleci.com/docs/2.0/docker-layer-caching/) which could speed up large image builds. *I've reached out to CircleCI's support about how much this costs and will update this post if I receive a reply.* 
 
 Currently, the default Docker version used is `17.09.0-ce` (compared to the latest stable release of `18.03.1-ce`). 
 [To pin a specific Docker version](https://discuss.circleci.com/t/new-docker-versions-for-machine-images-on-circleci-2-0/15686), you can do so my using `year-month` versioned image, e.g. `circleci/classic:201808-01`.
