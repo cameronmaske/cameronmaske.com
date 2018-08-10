@@ -105,17 +105,7 @@ I prefer using the `machine` executor, as the configuration is simpler and seems
 
 *I've reached out to CircleCI's support to clarify what that may mean, and will update this post with that information if they reply.*
 
-The `docker` executor requires a few workarounds (documented below) that add to the complexity. It still a feasible option, but the few gotchas sway my favour towards the `machine` executor
-
-#### Docker Compose workarounds with CircleCI's `docker` executor. 
-
-Here is an [example configuration](https://github.com/cameronmaske/django-drf-testing/blob/circle-ci2/.circleci/config.yml#L1) with the work arounds listed below.
-
-If you need to build Docker images (which our project does) you have to tell Circle to set up a remote docker environment to execute any docker commands. [This isn't necessarily complex to add your configuration, it's a simple one-line addition.](https://circleci.com/docs/2.0/building-docker-images/#overview) 
-
-However, it is not possible to mount folders (i.e the `volumes` key in Docker Compose) for containers run by the remote docker instance.
-
-This means you either to set up a separate `docker-compose.yml`, without volumes and in your Dockerfile, make sure to `ADD` any folders/code that you need available to run your tests. Alternatively, you can start up a container, and copy files over (using `docker cp`). Due to this, the `machine` executor requires less configuration and from my experimentation has a negligible impact on the speed at which tests are run. 
+The `docker` executor requires a few workarounds ([documented here](https://gist.github.com/cameronmaske/ad032c7709cf8b9fc1da4ad8df908450)) that add to the complexity. It still a feasible option, but the few gotchas sway my favour towards the `machine` executor
 
 ## Setup
 
